@@ -7,6 +7,7 @@ import Home from './components/HomeScreen';
 import Login from './components/Login'
 import colors from './assets/colors/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
+import HomeScreen from './components/HomeScreen';
 
 
 Icon.loadFont();
@@ -33,6 +34,12 @@ export default function App() {
         <Stack.Screen
           name="Login"
           component={Login}
+          options={{
+            headerShown: false,
+          }} />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
           options={{
             headerShown: false,
           }} />
