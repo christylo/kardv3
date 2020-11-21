@@ -10,10 +10,16 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+<<<<<<< HEAD
+=======
+    "@material-ui/styles": "^4.10.0",
+>>>>>>> bd4a01d20d6ea4368bfcc7fdf855f1f8773c8fcb
     "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/material-bottom-tabs": "^5.3.10",
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
     "expo": "~39.0.2",
+    "expo-camera": "~9.0.0",
     "expo-status-bar": "~1.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -23,6 +29,7 @@
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.4",
     "react-native-screens": "~2.10.1",
+    "react-native-unimodules": "^0.11.0",
     "react-native-vector-icons": "^7.1.0",
     "react-native-web": "~0.13.12"
   },
