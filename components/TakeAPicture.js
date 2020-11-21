@@ -33,37 +33,47 @@ export default TakeAPicture = () => {
     }
     return (
         <View style={styles.cameracontainer2}>
-        <View style={styles.cameracontainer}>
-            <Camera style={{ flex: 1 }} type={type} >
-                <View
-                    style={{
-                        flex: 1,
-                        backgroundColor: 'transparent',
-                        flexDirection: 'row',
-                    }}>
-                    <TouchableOpacity
+            <View style={styles.cameracontainer}>
+                <Camera style={{ flex: 1 }} type={type} >
+                    <View
                         style={{
-                            flex: 0.1,
-                            alignSelf: 'flex-end',
-                            alignItems: 'center',
-                        }}
-                        onPress={() => {
-                            setType(
-                                type === Camera.Constants.Type.back
-                                    ? Camera.Constants.Type.front
-                                    : Camera.Constants.Type.back
-                            );
+                            flex: 1,
+                            backgroundColor: 'transparent',
+                            flexDirection: 'row',
                         }}>
-                        <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}></Text>
-                    </TouchableOpacity>
+                        <TouchableOpacity
+                            style={{
+                                flex: 0.1,
+                                alignSelf: 'flex-end',
+                                alignItems: 'center',
+                            }}
+                            onPress={() => {
+                                setType(
+                                    type === Camera.Constants.Type.back
+                                        ? Camera.Constants.Type.front
+                                        : Camera.Constants.Type.back
+                                );
+                            }}>
+                            <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}></Text>
+                        </TouchableOpacity>
+                    </View>
+                </Camera>
+
+            </View>
+
+            <View style={styles.temp1}>
+                <View >
+                    <Button
+                        title="Take Picture"
+                        color="#568259"
+                        onPress={() => takePicture()}
+                    />
                 </View>
-            </Camera>
-            <Button
-                title="Take Picture"
-                color="#568259"
-                onPress={() => takePicture()}
-                />
-        </View>
+                <View>
+                    <Image source={require('../assets/images/character_maleAdventurer_switch1_2.png')} style={styles.person}/>
+                </View>
+            </View>
+
         </View>
     )
 
@@ -75,6 +85,17 @@ export default TakeAPicture = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    person: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        resizeMode: 'contain',
+    },
+    temp1: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingTop: 20,
     },
     cameracontainer: {
         flex: 1,

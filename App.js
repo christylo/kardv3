@@ -4,6 +4,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Login from './components/Login'
 import HomeScreen from './components/HomeScreen';
 import TakeAPicture from './components/TakeAPicture';
 import colors from './assets/colors/colors';
@@ -56,11 +57,21 @@ const Tab = createMaterialBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
-      activeColor="#00aea2"
+      initialRouteName="Login"
+      activeColor="#e91e63"
       labelStyle={{ fontSize: 12 }}
       style={{ backgroundColor: colors.mintBackground }}
     >
+      <Tab.Screen
+        name="Login"
+        component={Login}
+        options={{
+          tabBarLabel: 'Login',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
       <Tab.Screen
         name="Home"
         component={HomeScreen}

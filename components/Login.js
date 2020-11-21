@@ -1,9 +1,9 @@
 import { ThemeProvider } from '@react-navigation/native';
 import React from 'react';
-import { View, Image, SafeAreaView, Text, StyleSheet } from 'react-native';
+import { Button, View, Image, SafeAreaView, Text, StyleSheet } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
-export default Login = () => {
+export default Login = ({ navigation }) => {
     const [text, setText] = React.useState('');
 
     return (
@@ -28,9 +28,15 @@ export default Login = () => {
                     value={text}
                     onChangeText={text => setText(text)}
                 />
-            </View>
-            <View style={styles.buttonWrapper}>
-                
+                <View style={styles.buttonWrapper}>
+                    <Button
+                        color='#1BB55C'
+                        onPress={() =>
+                            navigation.navigate('HomeScreen')
+                        }
+                        title="Login"
+                    />
+                </View>
             </View>
         </View>
     )
@@ -41,6 +47,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     logoWrapper: {
+        alignItems: 'center',
+        justifyContent: 'center',
         position: 'absolute',
         width: 161,
         height: 161,
@@ -57,5 +65,8 @@ const styles = StyleSheet.create({
         height: 153,
         left: 65,
         top: 387,
-    }
+    },
+    buttonWrapper: {
+        paddingTop: 10
+    },
 });
