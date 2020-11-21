@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './components/Home';
+import Login from './components/Login'
 import colors from './assets/colors/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -16,8 +17,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
-          component={Home}
+          name="Login"
+          component={Login}
           options={{
             headerShown: false,
           }} />
