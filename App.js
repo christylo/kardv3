@@ -58,9 +58,10 @@ function MyTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Login"
-      activeColor="#e91e63"
+      activeColor="#f1fffa"
       labelStyle={{ fontSize: 12 }}
       style={{ backgroundColor: colors.mintBackground }}
+      barStyle={{backgroundColor: '#18944c'}}
     >
       <Tab.Screen
         name="Login"
