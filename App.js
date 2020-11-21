@@ -60,7 +60,7 @@ function MyTabs() {
       initialRouteName="Login"
       activeColor="#e91e63"
       labelStyle={{ fontSize: 12 }}
-      style={{ backgroundColor: 'tomato' }}
+      style={{ backgroundColor: colors.mintBackground }}
     >
       <Tab.Screen
         name="Login"
@@ -88,7 +88,7 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Payment',
           tabBarIcon: ({ color }) => (
-            <FontAwesome name="credit-card" size={24} color={color} />
+            <FontAwesome name="credit-card" size={22} color={color} />
           ),
         }}
       />
@@ -113,25 +113,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
-// export default function App() {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRoutName="Home">
-//         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-//         <Stack.Screen name="Profile" component={ProfileScreen} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// }
 
-// export default function App() {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRoutName="Home">
-//         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-//         <Stack.Screen name="Profile" component={ProfileScreen} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// }
 
