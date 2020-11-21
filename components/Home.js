@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
         paddingTop: 20
     },
     descriptionTitles: {
+        fontFamily: 'Inter-Regular-slnt=0',
         fontSize: 15,
     }
 });
