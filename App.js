@@ -57,9 +57,9 @@ function MyTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      activeColor="#e91e63"
+      activeColor="#00aea2"
       labelStyle={{ fontSize: 12 }}
-      style={{ backgroundColor: 'tomato' }}
+      style={{ backgroundColor: colors.mintBackground }}
     >
       <Tab.Screen
         name="Home"
@@ -83,7 +83,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileScreen}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
@@ -102,25 +102,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
-// export default function App() {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRoutName="Home">
-//         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-//         <Stack.Screen name="Profile" component={ProfileScreen} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// }
 
-// export default function App() {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRoutName="Home">
-//         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-//         <Stack.Screen name="Profile" component={ProfileScreen} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// }
 
