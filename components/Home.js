@@ -1,13 +1,10 @@
 import React from 'react';
-import { View, Image, SafeAreaView, Text, StyleSheet } from 'react-native';
-import Feather from 'react-native-vector-icons/Feather';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import recentTransactionsData from '../assets/data/recentTransactionsData';
-//import Inter from '../assets/fonts/Inter-Regular-slnt=0.tff';
+import { Button, View, Image, SafeAreaView, Text, StyleSheet } from 'react-native';
+
 
 //Inter.loadFont();
 
-export default Home = () => {
+export default HomeScreen = ({ navigation: { navigate } }) => {
     return (
         <View style={styles.container}>
             {/* header */}
@@ -23,9 +20,20 @@ export default Home = () => {
                 <Text style={styles.descriptionTitles}>Allowance This Month</Text>
                 <Text style={styles.descriptionTitles}>Money Remaining</Text>
             </View>
+            {/* test button */}
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Text>This is the home screen of the app</Text>
+                <Button
+                    onPress={() =>
+                        navigate('Profile', { names: ['Brent', 'Satya', 'Michaś'] })
+                    }
+                    title="Go to Brent's profile"
+                />
+            </View>
         </View>
     )
 };
+
 
 const styles = StyleSheet.create({
     container: {
@@ -48,7 +56,6 @@ const styles = StyleSheet.create({
         paddingTop: 20
     },
     descriptionTitles: {
-        fontFamily: 'Inter-Regular-slnt=0',
         fontSize: 15,
     }
 });
