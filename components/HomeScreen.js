@@ -1,9 +1,6 @@
 import React from 'react';
 import { Button, View, Image, SafeAreaView, Text, StyleSheet } from 'react-native';
 
-
-//Inter.loadFont();
-
 export default HomeScreen = ({ navigation: { navigate } }) => {
     return (
         <View style={styles.container}>
