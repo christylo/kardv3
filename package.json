@@ -10,10 +10,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-<<<<<<< HEAD
-=======
     "@material-ui/styles": "^4.10.0",
->>>>>>> bd4a01d20d6ea4368bfcc7fdf855f1f8773c8fcb
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/material-bottom-tabs": "^5.3.10",
     "@react-navigation/native": "^5.8.10",
