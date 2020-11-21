@@ -88,13 +88,13 @@ function MyTabs() {
         options={{
           tabBarLabel: 'Payment',
           tabBarIcon: ({ color }) => (
-            <FontAwesome name="credit-card" size={24} color={color} />
+            <FontAwesome name="credit-card" size={22} color={color} />
           ),
         }}
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileScreen}
+        component={Profile}
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (

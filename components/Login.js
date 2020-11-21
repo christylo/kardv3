@@ -17,14 +17,14 @@ export default Login = ({ navigation }) => {
                 <TextInput
                     label="Username"
                     mode="outlined"
-                    theme={{ colors: {primary: '#63c788'}}}
+                    theme={{ colors: { primary: '#63c788' } }}
                     value={text}
                     onChangeText={text => setText(text)}
                 />
                 <TextInput
                     label="Password"
                     mode="outlined"
-                    theme={{ colors: {primary: '#63c788'}}}
+                    theme={{ colors: { primary: '#63c788' } }}
                     value={text}
                     onChangeText={text => setText(text)}
                 />
@@ -50,8 +50,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         position: 'absolute',
-        width: 161,
-        height: 161,
+        width: 135,
+        height: 125,
         left: 121,
         top: 180,
     },
@@ -61,10 +61,10 @@ const styles = StyleSheet.create({
     },
     loginContainer: {
         position: 'absolute',
-        width: 280,
+        width: 250,
         height: 153,
         left: 65,
-        top: 387,
+        top: 340,
     },
     buttonWrapper: {
         paddingTop: 10
