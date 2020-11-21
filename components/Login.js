@@ -5,6 +5,7 @@ import { TextInput } from 'react-native-paper';
 
 export default Login = ({ navigation }) => {
     const [text, setText] = React.useState('');
+    const [pass, setPass] = React.useState('');
 
     return (
         <View style={styles.container}>
@@ -25,15 +26,17 @@ export default Login = ({ navigation }) => {
                     label="Password"
                     mode="outlined"
                     theme={{ colors: {primary: '#63c788'}}}
-                    value={text}
-                    onChangeText={text => setText(text)}
+                    secureTextEntry={true}
+                    value={pass}
+                    onChangeText={pass => setPass(pass)}
                 />
                 <View style={styles.buttonWrapper}>
                     <Button
                         color='#1BB55C'
                         onPress={() =>
-                            navigation.navigate('HomeScreen')
+                            navigation.navigate('Home')
                         }
+                        style={styles.buttonStyle}
                         title="Login"
                     />
                 </View>
@@ -69,4 +72,6 @@ const styles = StyleSheet.create({
     buttonWrapper: {
         paddingTop: 10
     },
+    buttonStyle: {
+    }
 });
