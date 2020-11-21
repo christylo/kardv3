@@ -25,16 +25,10 @@ export default Login = ({ navigation }) => {
                 <TextInput
                     label="Password"
                     mode="outlined"
-<<<<<<< HEAD
                     theme={{ colors: {primary: '#63c788'}}}
                     secureTextEntry={true}
                     value={pass}
                     onChangeText={pass => setPass(pass)}
-=======
-                    theme={{ colors: { primary: '#63c788' } }}
-                    value={text}
-                    onChangeText={text => setText(text)}
->>>>>>> ad94ad988744b86ecfe190078d41ec28fe0124d7
                 />
                 <View style={styles.buttonWrapper}>
                     <Button
