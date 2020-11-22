@@ -21,10 +21,13 @@
     "@react-navigation/stack": "^5.12.8",
     "expo": "~39.0.2",
     "expo-camera": "~9.0.0",
+    "expo-image-picker": "~9.1.1",
+    "expo-permissions": "~9.3.0",
     "expo-status-bar": "~1.0.2",
     "firebase": "^8.1.1",
     "material-ui-community-icons": "^0.15.0",
     "moment": "^2.29.1",
+    "nanoid": "^3.1.18",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-firebase-hooks": "^2.2.0",
@@ -43,6 +46,9 @@
     "react-native-unimodules": "^0.11.0",
     "react-native-vector-icons": "^7.1.0",
     "react-native-web": "~0.13.12",
+    "uid": "^2.0.0",
+    "undefined": "nanoid/non-secure",
+    "uuid": "^8.3.1",
     "victory-native": "^35.3.1"
   },
   "devDependencies": {
