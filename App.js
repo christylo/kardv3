@@ -7,6 +7,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './components/Login'
 import HomeScreen from './components/HomeScreen';
 import Payment from './components/Payment';
+import TakeAPicture from "./components/TakeAPicture";
+import Kidrequest from "./components/Kidrequest";
+import Kidconfirm from "./components/Kidconfirm";
+import Kidpay from "./components/Kidpay";
+import Kidcard from "./components/Kidcard";
 import colors from './assets/colors/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -14,10 +19,13 @@ import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 
 Icon.loadFont();
 
-function Feed() {
+function FeedScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed!</Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Button
+        title="Go to Settings"
+        onPress={() => navigation.navigate('Settings')}
+      />
     </View>
   );
 }
@@ -30,13 +38,6 @@ function Profile() {
   );
 }
 
-function Notifications() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications!</Text>
-    </View>
-  );
-}
 
 function ProfileScreen({ navigation, route }) {
   return (
@@ -51,7 +52,20 @@ function ProfileScreen({ navigation, route }) {
   );
 }
 
-//const Stack = createStackNavigator();
+const Stack = createStackNavigator();
+
+function PaymentStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Take Picture of Item" component={TakeAPicture} />
+      <Stack.Screen name="Send Request" component={Kidrequest} />
+      <Stack.Screen name="Pending Authorization" component={Kidconfirm} />
+      <Stack.Screen name="Confirm Payment" component={Kidpay} />
+      <Stack.Screen name="Pay with Card" component={Kidcard} />
+    </Stack.Navigator>
+  );
+}
+
 const Tab = createMaterialBottomTabNavigator();
 
 function MyTabs() {
@@ -61,7 +75,7 @@ function MyTabs() {
       activeColor="#f1fffa"
       labelStyle={{ fontSize: 12 }}
       style={{ backgroundColor: colors.mintBackground }}
-      barStyle={{backgroundColor: '#18944c'}}
+      barStyle={{ backgroundColor: '#18944c' }}
     >
       <Tab.Screen
         name="Home"
@@ -75,7 +89,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="PaymentAuthorization"
-        component={Payment}
+        component={PaymentStack}
         options={{
           tabBarLabel: 'Payment',
           tabBarIcon: ({ color }) => (

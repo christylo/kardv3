@@ -9,12 +9,10 @@ import Kidconfirm from "./Kidconfirm";
 import Kidpay from "./Kidpay";
 import Kidcard from "./Kidcard";
 
-export default TakeAPicture = () => {
+export default TakeAPicture = ({ navigation: { navigate } }) => {
 
     const [hasPermission, setHasPermission] = useState(null);
     const [type, setType] = useState(Camera.Constants.Type.back);
-    const [nextScreen, setNextScreen] = useState(false);
-
 
     useEffect(() => {
         (async () => {
@@ -29,7 +27,15 @@ export default TakeAPicture = () => {
             const data = await this.camera.takePictureAsync(options);
             let photo = await this.camera.takePictureAsync();
         }
+        myClick();
     };
+
+    function myClick() {
+        setTimeout(
+            function () {
+                navigate('Send Request');
+            }, 1500);
+    }
 
     if (hasPermission === null) {
         return <View />;
