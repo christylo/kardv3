@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Button, View, Image, SafeAreaView, Text, StyleSheet } from 'react-native';
+import { Button, View, Image, SafeAreaView, Text, StyleSheet, FlatList } from 'react-native';
 import { VictoryPie } from 'victory-native'
+import recentTransactionsData from '../assets/data/recentTransactionsData';
+import { Ionicons } from '@expo/vector-icons';
 
 const graphicColor = ["#f1fffa", "#96e6b3", "#1bb55c", "#568259"];
 const wantedGraphicData = [{ x: "Cash", y: 35 }, { x: "Snacks", y: 20 }, { x: "Meals", y: 20 }, { x: "Others", y: 55 }];
@@ -8,6 +10,16 @@ const defaultGraphicData = [{ y: 1 }, { y: 0 }, { y: 0 }, { y: 0 }];
 
 export default HomeScreen = ({ navigation: { navigate } }) => {
     const [graphicData, setGraphicData] = useState(defaultGraphicData);
+
+    const renderTransactionItem = ({ item }) => {
+        return (
+            <View style={styles.transactionItemWrapper}>
+                <Text style={styles.transactionPurchase}>{item.purchase}</Text>
+                <Text style={styles.transactionCost}>{item.cost}</Text>
+                <Ionicons name="ios-information-circle-outline" size={20} color="#979797" style={styles.transactionIcon} />
+            </View>
+        );
+    };
 
     useEffect(() => {
         setGraphicData(wantedGraphicData);
@@ -23,6 +35,7 @@ export default HomeScreen = ({ navigation: { navigate } }) => {
                     </Image>
                 </View>
             </SafeAreaView>
+
             {/* budget displays */}
             <View style={styles.budgetDisplaysWrapper}>
                 <View style={styles.budgetItem}>
@@ -42,7 +55,8 @@ export default HomeScreen = ({ navigation: { navigate } }) => {
                     </View>
                 </View>
             </View>
-            {/* test button */}
+
+            {/* pie chart */}
             <View style={styles.pieChartTitleWrapper}><Text style={styles.pieChartTitle}>Average Spending</Text></View>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <VictoryPie
@@ -52,6 +66,21 @@ export default HomeScreen = ({ navigation: { navigate } }) => {
                     colorScale={graphicColor}
                 />
             </View>
+
+            {/* transactons and payment scrolling list
+            <View style={styles.transactionsWrapper}>
+                <Text style={styles.transactionTitle}>Recent Transactions</Text>
+                <View style={styles.transactionListWrapper}>
+                    <FlatList
+                        data={recentTransactionsData}
+                        renderItem={renderTransactionItem}
+                        keyExtractor={item => item.id}
+                    />
+                </View>
+            </View>
+            */}
+
+            {/* transactons and payment button */}
             <View style={styles.imageWrapper}>
                 <View style={{ justifyContent: 'center' }}>
                     <View style={{ paddingBottom: 12 }}>
@@ -137,6 +166,31 @@ const styles = StyleSheet.create({
     imageWrapper: {
         flexDirection: 'row',
     },
-    buttonStyle: {
+    transactionWrapper: {
+        marginTop: 30
+    },
+    transactionTitle: {
+        fontSize: 25,
+        paddingHorizontal: 20
+    },
+    transactionListWrapper: {
+        paddingTop: 300,
+        backgroundColor: '#F1FFFA',
+        alignItems: 'center'
+    },
+    transactionItemWrapper: {
+        backgroundColor: '#F0F0F0',
+        marginTop: 5,
+        borderRadius: 20
+    },
+    transactionPurchase: {
+
+    },
+    transactionCost: {
+
+    },
+    transactionIcon: {
+
     }
+
 });

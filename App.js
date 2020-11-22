@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -8,18 +8,13 @@ import Login from './components/Login'
 import HomeScreen from './components/HomeScreen';
 import ParentHomeScreen from './components/ParentHomeScreen';
 import Parentallowance from './components/Parentallowance';
-import Payment from './components/Payment';
 import TakeAPicture from "./components/TakeAPicture";
 import Kidrequest from "./components/Kidrequest";
 import Kidconfirm from "./components/Kidconfirm";
 import Kidpay from "./components/Kidpay";
 import Kidcard from "./components/Kidcard";
 import colors from './assets/colors/colors';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
-
-
-Icon.loadFont();
 
 function Profile({ navigation }) {
   return (
@@ -27,20 +22,6 @@ function Profile({ navigation }) {
       <Text>Profile!</Text>
       <Button title="Back to login :)" onPress={() => navigation.navigate('Login')} />
       <Button title="To parent user flow ..." onPress={() => navigation.navigate('Parent Login')} />
-    </View>
-  );
-}
-
-
-function ProfileScreen({ navigation, route }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Profile Screen</Text>
-      <Text>Friends: </Text>
-      <Text>{route.params.names[0]}</Text>
-      <Text>{route.params.names[1]}</Text>
-      <Text>{route.params.names[2]}</Text>
-      <Button title="Go back" onPress={() => navigation.goBack()} />
     </View>
   );
 }
@@ -54,14 +35,6 @@ function ParentStack() {
       <Stack.Screen name="Parent Home Tabs" component={ParentTabs} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
-}
-
-function ProfileStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Parent Tabs" component={ParentStack} options={{ headerShown: false }} />
-    </Stack.Navigator>
-  )
 }
 
 function LoginStack() {
