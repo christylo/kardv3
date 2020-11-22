@@ -25,7 +25,7 @@ export default Login = ({ navigation }) => {
                 <TextInput
                     label="Password"
                     mode="outlined"
-                    theme={{ colors: {primary: '#63c788'}}}
+                    theme={{ colors: { primary: '#63c788' } }}
                     secureTextEntry={true}
                     value={pass}
                     onChangeText={pass => setPass(pass)}
@@ -34,7 +34,7 @@ export default Login = ({ navigation }) => {
                     <Button
                         color='#1BB55C'
                         onPress={() =>
-                            navigation.navigate('Home')
+                            navigation.navigate('Home Tabs')
                         }
                         style={styles.buttonStyle}
                         title="Login"
