@@ -4,6 +4,10 @@ import { Camera } from 'expo-camera';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import recentTransactionsData from '../assets/data/recentTransactionsData';
+import kidrequest from "./Kidrequest";
+import Kidconfirm from "./Kidconfirm";
+import Kidpay from "./Kidpay";
+import Kidcard from "./Kidcard";
 
 export default TakeAPicture = () => {
 
@@ -72,9 +76,12 @@ export default TakeAPicture = () => {
                 <View>
                     <Image source={require('../assets/images/character_maleAdventurer_switch1_2.png')} style={styles.person}/>
                 </View>
-            </View>
+                <View>
 
+                </View>
+            </View>
         </View>
+
     )
 
 

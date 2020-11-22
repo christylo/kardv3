@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './components/Login'
 import HomeScreen from './components/HomeScreen';
-import TakeAPicture from './components/TakeAPicture';
+import Payment from './components/Payment';
 import colors from './assets/colors/colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -75,7 +75,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="PaymentAuthorization"
-        component={TakeAPicture}
+        component={Payment}
         options={{
           tabBarLabel: 'Payment',
           tabBarIcon: ({ color }) => (
