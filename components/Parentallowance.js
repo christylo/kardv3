@@ -11,8 +11,12 @@ import Parentallowance2 from "./Parentallowance2";
 export default Parentallowance = () => {
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/images/allowanceHeader.png')} />
-            <Parentallowance1 />
+            <View style={{paddingBottom: 8}}>
+                <Image source={require('../assets/images/allowanceHeader.png')} />
+            </View>
+            <View>
+                <Parentallowance1 />
+            </View>
             <Parentallowance2 />
         </View>
     )

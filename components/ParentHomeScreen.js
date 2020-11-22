@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, View, Image, SafeAreaView, Text, StyleSheet } from 'react-native';
+import { Button, View, Image, SafeAreaView, Text, StyleSheet, Alert, Modal, TouchableHighlight, TouchableWithoutFeedback } from 'react-native';
 import { VictoryPie } from 'victory-native'
 
 const graphicColor = ["#f1fffa", "#96e6b3", "#1bb55c", "#568259"];
@@ -8,6 +8,7 @@ const defaultGraphicData = [{ y: 1 }, { y: 0 }, { y: 0 }, { y: 0 }];
 
 export default ParentHomeScreen = ({ navigation: { navigate } }) => {
     const [graphicData, setGraphicData] = useState(defaultGraphicData);
+    const [modalVisible, setModalVisible] = useState(false);
 
     useEffect(() => {
         setGraphicData(wantedGraphicData);
@@ -18,13 +19,16 @@ export default ParentHomeScreen = ({ navigation: { navigate } }) => {
             {/* header */}
             <SafeAreaView>
                 <View style={styles.headerWrapper}>
+                    <TouchableWithoutFeedback onPress={() => {setModalVisible(true);}}>
                     <Image source={require('../assets/images/childSummaryHeader.png')} style={styles.pageHeader}>
                         {/* page header */}
                     </Image>
+                    </TouchableWithoutFeedback>
                 </View>
             </SafeAreaView>
 
-            <View style={styles.pieChartTitleWrapper}><Text style={styles.pieChartTitle}>Average Spending</Text></View>
+                <View style={styles.pieChartTitleWrapper}><Text style={styles.pieChartTitle}>Average Spending</Text></View>
+
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <VictoryPie
                     animate={{ delay: 200, duration: 20000, easing: 'exp' }}
@@ -51,6 +55,46 @@ export default ParentHomeScreen = ({ navigation: { navigate } }) => {
                     </View>
                 </View>
                 <Image source={require('../assets/images/character_malePerson_walk4_2.png')}></Image>
+            </View>
+            <View style={{backgroundColor: '1BB55C65'}}>
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={modalVisible}
+                    onRequestClose={() => {
+                        Alert.alert("Modal has been closed.");
+                    }}
+                >
+                    <View style={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <Text style={styles.modalText}>Taylor has requested $5.67</Text>
+                            <View style={{flexDirection: 'row',}}>
+                                <View style={{paddingHorizontal: 10}}>
+                                    <TouchableHighlight
+                                        style={{ ...styles.openButton, backgroundColor: "#568259" }}
+                                        onPress={() => {
+                                            setModalVisible(!modalVisible);
+                                        }}
+                                    >
+                                        <Text style={styles.textStyle}>Deny</Text>
+                                    </TouchableHighlight>
+                                </View>
+                                <View style={{paddingHorizontal: 10}}>
+                                    <TouchableHighlight
+                                        style={{ ...styles.openButton, backgroundColor: "#568259" }}
+                                        onPress={() => {
+                                            setModalVisible(!modalVisible);
+                                        }}
+                                    >
+                                        <Text style={styles.textStyle}>Allow</Text>
+                                    </TouchableHighlight>
+                                </View>
+                            </View>
+
+
+                        </View>
+                    </View>
+                </Modal>
             </View>
         </View>
     )
@@ -119,5 +163,41 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     buttonStyle: {
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+    },
+    modalView: {
+        margin: 20,
+        backgroundColor: "#1BB55C",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
+    },
+    openButton: {
+        backgroundColor: "#568259",
+        borderRadius: 10,
+        padding: 10,
+        elevation: 2
+    },
+    textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+    modalText: {
+        marginBottom: 15,
+        textAlign: "center"
     }
 });
