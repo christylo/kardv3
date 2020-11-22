@@ -30,10 +30,11 @@ function FeedScreen({ navigation }) {
   );
 }
 
-function Profile() {
+function Profile({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Profile!</Text>
+      <Button title="Back to login :)" onPress={() => navigation.navigate('Login')} />
     </View>
   );
 }
@@ -66,7 +67,7 @@ function LoginStack() {
 function PaymentStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Take Picture of Item" component={TakeAPicture} />
+      <Stack.Screen name="Take Picture of Item" component={TakeAPicture} options={{ headerShown: false }} />
       <Stack.Screen name="Send Request" component={Kidrequest} />
       <Stack.Screen name="Pending Authorization" component={Kidconfirm} />
       <Stack.Screen name="Confirm Payment" component={Kidpay} />

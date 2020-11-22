@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     },
     cameracontainer2: {
         flex: 1,
-        padding: 20,
+        padding: 30,
     },
     headerWrapper: {
         flexDirection: 'row',
