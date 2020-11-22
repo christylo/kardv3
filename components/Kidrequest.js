@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Camera } from "expo-camera";
 
-export default Kidrequest = () => {
+export default Kidrequest = ({ navigation }) => {
 
     return (
         <View style={styles.maincontainer}>
@@ -20,14 +20,14 @@ export default Kidrequest = () => {
                         <Button
                             title="Cancel"
                             color="#568259"
-                            onPress={() => takePicture()}
+                            onPress={() => navigation.navigate('Take Picture of Item')}
                         />
                     </View>
                     <View style={styles.temp2}>
                         <Button
                             title="Proceed"
                             color="#568259"
-                            onPress={() => takePicture()}
+                            onPress={() => navigation.navigate('Pending Authorization')}
                         />
                     </View>
                     <View>

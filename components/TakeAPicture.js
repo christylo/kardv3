@@ -27,8 +27,15 @@ export default TakeAPicture = ({ navigation: { navigate } }) => {
             const data = await this.camera.takePictureAsync(options);
             let photo = await this.camera.takePictureAsync();
         }
-        navigate('Send Request');
+        myClick();
     };
+
+    function myClick() {
+        setTimeout(
+            function () {
+                navigate('Send Request');
+            }, 1500);
+    }
 
     if (hasPermission === null) {
         return <View />;
