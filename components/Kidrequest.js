@@ -5,15 +5,30 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Camera } from "expo-camera";
+import {TextInput} from "react-native-paper";
 
 export default Kidrequest = ({ navigation }) => {
+
+    const [pass, setPass] = React.useState('');
 
     return (
         <View style={styles.maincontainer}>
             <View style={styles.subcontainer}>
                 <Text style={{ color: '#FFF', fontSize: 18 }}> Request </Text>
-                <View style={{ paddingTop: 50, paddingBottom: 40 }}>
-                    <Text style={{ color: '#FFF', fontSize: 42 }}> Total $5.67 </Text>
+                <View style={{        position: 'absolute',
+                    width: 200,
+                    height: 153,
+                    left: 40,
+                    top: 100,}}>
+
+                    <TextInput
+                        label="Total"
+                        mode="outlined"
+                        theme={{ colors: { primary: '#63c788' } }}
+                        secureTextEntry={false}
+                        value={pass}
+                        onChangeText={pass => setPass(pass)}
+                    />
                 </View>
                 <View style={styles.temp1}>
                     <View>
@@ -49,7 +64,7 @@ const styles = StyleSheet.create({
     temp1: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingTop: 20,
+        paddingTop: 150,
     },
     maincontainer: {
         borderRadius: 10,

@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: 135,
         height: 125,
-        left: 121,
+        left: 118,
         top: 180,
     },
     logo: {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: 250,
         height: 153,
-        left: 65,
+        left: 60,
         top: 340,
     },
     buttonWrapper: {
