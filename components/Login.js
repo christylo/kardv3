@@ -11,7 +11,7 @@ export default Login = ({ navigation }) => {
         <View style={styles.container}>
             <SafeAreaView>
                 <View style={styles.logoWrapper}>
-                    <Image source={require('../assets/images/logo3.png')} style={styles.logo}></Image>
+                    <Image source={require('../assets/images/logo4.png')} style={styles.logo}></Image>
                 </View>
             </SafeAreaView>
             <View style={styles.loginContainer}>
@@ -39,6 +39,17 @@ export default Login = ({ navigation }) => {
                         style={styles.buttonStyle}
                         title="Login"
                     />
+                    <View style={{alignItems: 'center', justifyContent: 'center'}}>
+                        <Text style={{paddingTop: 4}}>
+                            Forgot Password?
+                        </Text>
+                        <Text style={{paddingTop: 6}}>
+                            Create a parent account
+                        </Text>
+                        <Text style={{paddingTop: 4}}>
+                            Create a child account
+                        </Text>
+                    </View>
                 </View>
             </View>
         </View>
