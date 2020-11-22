@@ -51,8 +51,8 @@ export default TakeAPicture = ({ navigation: { navigate } }) => {
             const data = await this.camera.takePictureAsync(options);
             let photo = await this.camera.takePictureAsync();
         }
-        quickstart();
-        //myClick();
+
+        myClick();
 
     };
 
