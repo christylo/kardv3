@@ -1,10 +1,5 @@
 import 'react-native-gesture-handler';
-import React, { useEffect, useState } from 'react';
-import { Button, Image, StyleSheet, Text, TouchableWithoutFeedback, View, TouchableHighlight } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { Camera } from "expo-camera";
+import { Button, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native';
 
 
 export default Kidconfirm = ({ navigation }) => {
@@ -35,8 +30,6 @@ export default Kidconfirm = ({ navigation }) => {
 
 
 }
-
-
 
 const styles = StyleSheet.create({
     temp2: {

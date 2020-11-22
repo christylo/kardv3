@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { View, Image, SafeAreaView, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Camera } from 'expo-camera';
-import Feather from 'react-native-vector-icons/Feather';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import recentTransactionsData from '../assets/data/recentTransactionsData';
-import kidrequest from "./Kidrequest";
-import Kidconfirm from "./Kidconfirm";
-import Kidpay from "./Kidpay";
-import Kidcard from "./Kidcard";
+
 
 export default TakeAPicture = ({ navigation: { navigate } }) => {
 
