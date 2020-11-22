@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from './components/Login'
 import HomeScreen from './components/HomeScreen';
 import ParentHomeScreen from './components/ParentHomeScreen';
+import Parentallowance from './components/Parentallowance';
 import Payment from './components/Payment';
 import TakeAPicture from "./components/TakeAPicture";
 import Kidrequest from "./components/Kidrequest";
@@ -25,7 +26,7 @@ function Profile({ navigation }) {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Profile!</Text>
       <Button title="Back to login :)" onPress={() => navigation.navigate('Login')} />
-      <Button title="To parent user flow ..." onPress={() => navigation.navigate('Parent Tabs')} />
+      <Button title="To parent user flow ..." onPress={() => navigation.navigate('Parent Login')} />
     </View>
   );
 }
@@ -68,6 +69,7 @@ function LoginStack() {
     <Stack.Navigator>
       <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
       <Stack.Screen name="Home Tabs" component={MyTabs} options={{ headerShown: false }} />
+      <Stack.Screen name="Parent Login" component={ParentStack} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
@@ -117,7 +119,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileStack}
+        component={Profile}
         options={{
           tabBarVisible: false,
           tabBarLabel: 'Profile',
@@ -144,9 +146,31 @@ function ParentTabs() {
         component={ParentHomeScreen}
         options={{
           tabBarVisible: false,
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Parent Home',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Parent Allowance"
+        component={Parentallowance}
+        options={{
+          tabBarVisible: false,
+          tabBarLabel: 'Parent Allowance',
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="credit-card" size={22} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarVisible: false,
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="account" color={color} size={26} />
           ),
         }}
       />
