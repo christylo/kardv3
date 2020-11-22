@@ -25,10 +25,25 @@ export default HomeScreen = ({ navigation: { navigate } }) => {
             </SafeAreaView>
             {/* budget displays */}
             <View style={styles.budgetDisplaysWrapper}>
-                <Text style={styles.descriptionTitles}>Allowance This Month</Text>
-                <Text style={styles.descriptionTitles}>Money Remaining</Text>
+                <View style = {styles.budgetItem}>
+                    <Text style={styles.descriptionTitles}>Allowance this month</Text>
+                    <View style={styles.budgetBlock}>
+                        <View style={styles.budgetAmountWrapper}>
+                            <Text style={styles.amount}>$50.00</Text>
+                        </View>
+                    </View>
+                </View>
+                <View style = {styles.budgetItem}>
+                    <Text style={styles.descriptionTitles}>Money remaining</Text>
+                    <View style={styles.budgetBlock}>
+                        <View style={styles.budgetAmountWrapper}>
+                            <Text style={styles.amount}>$14.95</Text>
+                        </View>
+                    </View>
+                </View>
             </View>
             {/* test button */}
+            <View style={styles.pieChartTitleWrapper}><Text style={styles.pieChartTitle}>Average Spending</Text></View>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <VictoryPie
                     animate={{delay: 200, duration: 20000, easing: 'exp'}}
@@ -36,13 +51,25 @@ export default HomeScreen = ({ navigation: { navigate } }) => {
                     height={300}
                     colorScale={graphicColor}
                 />
-                <Text>This is the home screen of the app</Text>
-                <Button
-                    onPress={() =>
-                        navigate('Profile', { names: ['Brent', 'Satya', 'Michaś'] })
-                    }
-                    title="Go to Brent's profile"
-                />
+            </View>
+            <View style={styles.imageWrapper}>
+                <View style={{justifyContent: 'center'}}>
+                    <View style={{paddingBottom: 12}}>
+                        <Button
+                            color='#1BB55C'
+                            style={styles.buttonStyle}
+                            title="Transactions "
+                        />
+                    </View>
+                    <View style={{paddingBottom: 10}}>
+                        <Button
+                            color='#1BB55C'
+                            style={styles.buttonStyle}
+                            title="Payment"
+                        />
+                    </View>
+                </View>
+                <Image source={require('../assets/images/character_malePerson_walk4_2.png')}></Image>
             </View>
         </View>
     )
@@ -52,12 +79,15 @@ export default HomeScreen = ({ navigation: { navigate } }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
     },
     headerWrapper: {
         flexDirection: 'row',
-        justifyContent: "space-between",
+        justifyContent: "center",
         paddingHorizontal: 35,
-        paddingTop: 20
+        paddingTop: 35,
+        paddingBottom: 15
     },
     pageHeader: {
         width: 303,
@@ -65,11 +95,48 @@ const styles = StyleSheet.create({
     },
     budgetDisplaysWrapper: {
         flexDirection: 'row',
-        justifyContent: "space-between",
-        paddingHorizontal: 20,
-        paddingTop: 20
+        justifyContent: "center",
+        paddingTop: 10,
+        paddingBottom: 10,
+        width: 370,
+        height: 123,
+        backgroundColor: "#f1fffa"
+    },
+    budgetItem: {
+        justifyContent: 'center',
+        paddingHorizontal: 22
+    },
+    budgetBlock: {
+        paddingLeft: 8
+    },
+    budgetAmountWrapper: {
+        justifyContent: 'center',
+        width: 110,
+        height: 47,
+        backgroundColor: "white",
+        borderWidth: 12,
+        borderColor: '#1bb55c',
+        borderRadius: 5
     },
     descriptionTitles: {
         fontSize: 15,
+        paddingBottom: 18
+    },
+    amount: {
+        fontSize: 15,
+        paddingHorizontal: 15
+    },
+    pieChartTitleWrapper: {
+        justifyContent: 'center',
+        paddingTop: 50,
+        paddingBottom: 0
+    },
+    pieChartTitle: {
+        fontSize: 25
+    },
+    imageWrapper: {
+        flexDirection: 'row',
+    },
+    buttonStyle: {
     }
 });
