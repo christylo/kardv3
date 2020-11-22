@@ -19,7 +19,7 @@ export default Kidconfirm = ({ navigation }) => {
                     </View>
                 </TouchableWithoutFeedback>
                 <Text style={{ color: '#FFF', fontSize: 18 }}> Request sent. </Text>
-                <Text style={{ color: '#FFF', fontSize: 18 }}> Waiting for Taylor </Text>
+                <Text style={{ color: '#FFF', fontSize: 18 }}> Waiting for approval. </Text>
                 <View style={styles.temp1}>
                     <View>
                         <Button

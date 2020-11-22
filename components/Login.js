@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@react-navigation/native';
 import React from 'react';
-import { Button, View, Image, SafeAreaView, Text, StyleSheet } from 'react-native';
+import { Button, View, Image, SafeAreaView, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { TextInput } from 'react-native-paper';
 
 export default Login = ({ navigation }) => {
@@ -39,17 +39,19 @@ export default Login = ({ navigation }) => {
                         style={styles.buttonStyle}
                         title="Login"
                     />
-                    <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                        <Text style={{paddingTop: 4}}>
-                            Forgot Password?
-                        </Text>
-                        <Text style={{paddingTop: 6}}>
-                            Create a parent account
-                        </Text>
-                        <Text style={{paddingTop: 4}}>
-                            Create a child account
-                        </Text>
-                    </View>
+                    <TouchableWithoutFeedback onPress={() => navigation.navigate('Parent Home Tabs')}>
+                        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                            <Text style={{ paddingTop: 4 }}>
+                                Forgot Password?
+                            </Text>
+                            <Text style={{ paddingTop: 6 }}>
+                                Create a parent account
+                            </Text>
+                            <Text style={{ paddingTop: 4 }}>
+                                Create a child account
+                            </Text>
+                        </View>
+                    </TouchableWithoutFeedback>
                 </View>
             </View>
         </View>

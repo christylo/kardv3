@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './components/Login'
 import HomeScreen from './components/HomeScreen';
+import ParentHomeScreen from './components/ParentHomeScreen';
 import Payment from './components/Payment';
 import TakeAPicture from "./components/TakeAPicture";
 import Kidrequest from "./components/Kidrequest";
@@ -19,22 +20,12 @@ import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 
 Icon.loadFont();
 
-function FeedScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button
-        title="Go to Settings"
-        onPress={() => navigation.navigate('Settings')}
-      />
-    </View>
-  );
-}
-
 function Profile({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Profile!</Text>
       <Button title="Back to login :)" onPress={() => navigation.navigate('Login')} />
+      <Button title="To parent user flow ..." onPress={() => navigation.navigate('Parent Tabs')} />
     </View>
   );
 }
@@ -54,6 +45,23 @@ function ProfileScreen({ navigation, route }) {
 }
 
 const Stack = createStackNavigator();
+
+function ParentStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+      <Stack.Screen name="Parent Home Tabs" component={ParentTabs} options={{ headerShown: false }} />
+    </Stack.Navigator>
+  );
+}
+
+function ProfileStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Parent Tabs" component={ParentStack} options={{ headerShown: false }} />
+    </Stack.Navigator>
+  )
+}
 
 function LoginStack() {
   return (
@@ -109,14 +117,40 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileStack}
         options={{
+          tabBarVisible: false,
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="account" color={color} size={26} />
           ),
         }}
       />
+    </Tab.Navigator>
+  );
+}
+
+function ParentTabs() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Parent Home"
+      activeColor="#f1fffa"
+      labelStyle={{ fontSize: 12 }}
+      style={{ backgroundColor: colors.mintBackground }}
+      barStyle={{ backgroundColor: '#18944c' }}
+    >
+      <Tab.Screen
+        name="Parent Home"
+        component={ParentHomeScreen}
+        options={{
+          tabBarVisible: false,
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+
     </Tab.Navigator>
   );
 }

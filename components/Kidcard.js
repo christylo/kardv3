@@ -16,42 +16,7 @@ export default Kidcard = () => {
 
 
 const styles = StyleSheet.create({
-    temp2: {
-        padding: 10,
-    },
-    temp1: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingTop: 20,
-    },
-    maincontainer: {
-        flex: 1,
-        borderRadius: 10,
-        overflow: 'hidden',
-    },
-    subcontainer: {
-        flex: 1,
-        padding: 20,
-        backgroundColor: '#1BB55C65',
-        alignItems: 'center',
-    },
-    headerWrapper: {
-        flexDirection: 'row',
-        justifyContent: "space-between",
-        paddingHorizontal: 35,
-        paddingTop: 20
-    },
-    pageHeader: {
-        width: 303,
-        height: 62
-    },
-    budgetDisplaysWrapper: {
-        flexDirection: 'row',
-        justifyContent: "space-between",
-        paddingHorizontal: 20,
-        paddingTop: 20
-    },
-    descriptionTitles: {
-        fontSize: 15,
+    logo: {
+        height: 200
     }
 });
