@@ -11,7 +11,7 @@ export default HomeScreen = ({ navigation: { navigate } }) => {
 
     useEffect(() => {
         setGraphicData(wantedGraphicData);
-      }, []);
+    }, []);
 
     return (
         <View style={styles.container}>
@@ -25,7 +25,7 @@ export default HomeScreen = ({ navigation: { navigate } }) => {
             </SafeAreaView>
             {/* budget displays */}
             <View style={styles.budgetDisplaysWrapper}>
-                <View style = {styles.budgetItem}>
+                <View style={styles.budgetItem}>
                     <Text style={styles.descriptionTitles}>Allowance this month</Text>
                     <View style={styles.budgetBlock}>
                         <View style={styles.budgetAmountWrapper}>
@@ -33,7 +33,7 @@ export default HomeScreen = ({ navigation: { navigate } }) => {
                         </View>
                     </View>
                 </View>
-                <View style = {styles.budgetItem}>
+                <View style={styles.budgetItem}>
                     <Text style={styles.descriptionTitles}>Money remaining</Text>
                     <View style={styles.budgetBlock}>
                         <View style={styles.budgetAmountWrapper}>
@@ -46,22 +46,22 @@ export default HomeScreen = ({ navigation: { navigate } }) => {
             <View style={styles.pieChartTitleWrapper}><Text style={styles.pieChartTitle}>Average Spending</Text></View>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <VictoryPie
-                    animate={{delay: 200, duration: 20000, easing: 'exp'}}
+                    animate={{ delay: 200, duration: 20000, easing: 'exp' }}
                     data={graphicData}
-                    height={300}
+                    height={200}
                     colorScale={graphicColor}
                 />
             </View>
             <View style={styles.imageWrapper}>
-                <View style={{justifyContent: 'center'}}>
-                    <View style={{paddingBottom: 12}}>
+                <View style={{ justifyContent: 'center' }}>
+                    <View style={{ paddingBottom: 12 }}>
                         <Button
                             color='#1BB55C'
                             style={styles.buttonStyle}
                             title="Transactions "
                         />
                     </View>
-                    <View style={{paddingBottom: 10}}>
+                    <View style={{ paddingBottom: 10 }}>
                         <Button
                             color='#1BB55C'
                             style={styles.buttonStyle}
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     },
     pieChartTitleWrapper: {
         justifyContent: 'center',
-        paddingTop: 50,
+        paddingTop: 20,
         paddingBottom: 0
     },
     pieChartTitle: {
