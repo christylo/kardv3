@@ -54,6 +54,15 @@ function ProfileScreen({ navigation, route }) {
 
 const Stack = createStackNavigator();
 
+function LoginStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Home Tabs" component={MyTabs} />
+    </Stack.Navigator>
+  );
+}
+
 function PaymentStack() {
   return (
     <Stack.Navigator>
@@ -114,7 +123,7 @@ function MyTabs() {
 export default function App() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <LoginStack />
     </NavigationContainer>
   );
 }
