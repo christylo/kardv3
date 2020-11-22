@@ -1,4 +1,4 @@
-# k kard
+# :credit_card: k kard
 Introducing the **k kard**, a Konvenient and Kool way to pay. 
 
 ### Inspirations
