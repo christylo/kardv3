@@ -5,15 +5,33 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Camera } from "expo-camera";
+import {TextInput} from "react-native-paper";
 
 export default Parentallowance1 = () => {
+
+    const [text, setText] = React.useState('$20');
+
     return(
         <View>
             <View style={styles.maincontainer}>
                 <View style={styles.subcontainer}>
                     <Text style={{ color: '#000', fontSize: 18 }}> Taylor's Total Allowance</Text>
                     <View style={styles.subsubcontainer}>
-                        <Text style={{ color: '#000', fontSize: 42 }}> $50 </Text>
+                        <View style={{        position: 'absolute',
+                            width: 100,
+                            height: 153,
+                            left: 50,
+                            top: 3,}}>
+
+                            <TextInput
+                                label={text}
+                                mode="outlined"
+                                theme={{ colors: { primary: '#63c788' } }}
+                                secureTextEntry={false}
+                                value={text}
+                                onChangeText={text => setText(text)}
+                            />
+                        </View>
                     </View>
                 </View>
             </View>
@@ -61,8 +79,7 @@ const styles = StyleSheet.create({
     },
     subsubcontainer: {
         flex: 1,
-        paddingLeft: 50,
-        paddingRight: 50,
+        paddingHorizontal: 100,
         paddingTop: 8,
         backgroundColor: '#E5E5E5',
         alignItems: 'center',
