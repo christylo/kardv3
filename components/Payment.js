@@ -11,12 +11,9 @@ import Kidconfirm from "./Kidconfirm";
 import Kidpay from "./Kidpay";
 import Kidcard from "./Kidcard";
 
-export default Payment = () => {
 
-    const [pictureTaken, setPictureTaken] = useState(false);
-    const [submittedRequest, setSubmittedRequested] = useState(false);
-    const [submittedConfirmation, setSubmittedConfirmation] = useState(false);
-    const [completedPayment, setCompletedPayment] = useState(false);
+
+export default Payment = () => {
 
 
     {/*
@@ -29,6 +26,7 @@ export default Payment = () => {
 
     return (
         <TakeAPicture />
+
     )
 
 }
