@@ -1,17 +1,20 @@
 import 'react-native-gesture-handler';
-import React, {useEffect, useState} from 'react';
-import {Button, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Camera} from "expo-camera";
+import { Camera } from "expo-camera";
 import TakeAPicture from "./TakeAPicture";
 import Kidrequest from "./Kidrequest";
 import Kidconfirm from "./Kidconfirm";
 import Kidpay from "./Kidpay";
 import Kidcard from "./Kidcard";
 
+
+
 export default Payment = () => {
+
 
     {/*
             <TakeAPicture/>
@@ -21,8 +24,9 @@ export default Payment = () => {
             <Kidcard/>
     */}
 
-    return(
-            <TakeAPicture/>
+    return (
+        <TakeAPicture />
+
     )
 
 }
@@ -30,7 +34,7 @@ export default Payment = () => {
 
 
 const styles = StyleSheet.create({
-    temp2:{
+    temp2: {
         padding: 10,
     },
     temp1: {
