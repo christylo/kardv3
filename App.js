@@ -57,8 +57,8 @@ const Stack = createStackNavigator();
 function LoginStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Home Tabs" component={MyTabs} />
+      <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+      <Stack.Screen name="Home Tabs" component={MyTabs} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }
