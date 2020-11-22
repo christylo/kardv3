@@ -15,13 +15,45 @@ export default TakeAPicture = ({ navigation: { navigate } }) => {
         })();
     }, []);
 
+    async function quickstart() {
+        // Imports the Google Cloud client library
+        const vision = require('@google-cloud/vision');
+
+        // Creates a client
+        const client = new vision.ImageAnnotatorClient();
+
+        // Performs label detection on the image file
+        const [result] = await client.labelDetection('./assets/images/card_purple.png');
+        const labels = result.labelAnnotations;
+        console.log('Labels:');
+        labels.forEach(label => console.log(label.description));
+
+
+        // ProductSetName productSetName = new ProductSetName(projectId, locationId, productSetId);
+
+        // ProductSearchParams searchParams = new ProductSearchParams
+        // {
+        //     ProductCategories = { "apparel" },
+        //     ProductSetAsProductSetName = productSetName,
+        // };
+        // ProductSearchResults results = client.DetectSimilarProducts(image, searchParams);
+        // foreach(var result in results.Results)
+        // {
+        //     Console.WriteLine($"{result.Product.DisplayName}: {result.Score}");
+        // }
+    }
+
+
+
     const takePicture = async () => {
         if (this.camera) {
             const options = { quality: 1, base64: true };
             const data = await this.camera.takePictureAsync(options);
             let photo = await this.camera.takePictureAsync();
         }
-        myClick();
+        quickstart();
+        //myClick();
+
     };
 
     function myClick() {
