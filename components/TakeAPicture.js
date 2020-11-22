@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Image, SafeAreaView, Text, StyleSheet, TouchableOpacity, Button } from 'react-native';
 import { Camera } from 'expo-camera';
 import Feather from 'react-native-vector-icons/Feather';
@@ -13,6 +13,8 @@ export default TakeAPicture = () => {
 
     const [hasPermission, setHasPermission] = useState(null);
     const [type, setType] = useState(Camera.Constants.Type.back);
+    const [nextScreen, setNextScreen] = useState(false);
+
 
     useEffect(() => {
         (async () => {
@@ -23,7 +25,7 @@ export default TakeAPicture = () => {
 
     const takePicture = async () => {
         if (this.camera) {
-            const options = {quality: 1, base64: true};
+            const options = { quality: 1, base64: true };
             const data = await this.camera.takePictureAsync(options);
             let photo = await this.camera.takePictureAsync();
         }
@@ -74,7 +76,7 @@ export default TakeAPicture = () => {
                     />
                 </View>
                 <View>
-                    <Image source={require('../assets/images/character_maleAdventurer_switch1_2.png')} style={styles.person}/>
+                    <Image source={require('../assets/images/character_maleAdventurer_switch1_2.png')} style={styles.person} />
                 </View>
                 <View>
 
