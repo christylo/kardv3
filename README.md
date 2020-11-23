@@ -22,6 +22,7 @@ Introducing ***k kard,*** a Konvenient and Kool way to pay.
 ### Pre-requisites
 ```
 npm install -g expo-cli
+npm install
 ```
 
 ### Run locally on Expo
@@ -35,7 +36,7 @@ Click image below for demo video (or click [here](https://youtu.be/3eHyQgif-yI))
 ## How we built it
 The frontend of the application was prototyped using **Figma** and developed using **React Native,** while **Google Firebase** was incorporated for backend. The **Google Cloud Vision API** was utilized to implement object recognition.
 
-![TechStack](assets/images/techstackwithgcp.jpg)
+![TechStack](assets/images/techstackwithgcp.png)
 
 ## Challenges we ran into
 Everyone on the team is new to mobile app development so there was a struggle setting up the dev environment and learning a new tech stack. Integrating the camera authorization functionality of the app was the most challenging obstacle we faced. Additionally, building the bridge between Google Cloud Vision and React Native was difficult as none of us has any experience with either of the technologies prior to this project.
