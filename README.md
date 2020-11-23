@@ -12,7 +12,7 @@ How do we find a paper free way to provide our children with allowance such that
 ## What it does
 Introducing ***k kard,*** a Konvenient and Kool way to pay.  
 
-![Logo](assets/images/logo.png)  
+![Logo](assets/images/logo4.png)  
 
 ***k kard*** is a mobile application, compatible with iOS and Android that provides a fun yet educational, safe and contactless payment solution such that parents can manage each transaction made by their child through a mobile platform. It is aimed towards millennial parents with children ages 8-12 who want to provide allowance without the hassle of dealing with cash or worrying about unreasonable transactions. ***k kard*** not only allows the child to make purchases through their own account, but tracks their spending and detects purchases out of the norm to alert parents when there is suspicious activity.  
 
