@@ -1,5 +1,5 @@
-# k kard :credit_card:
-## HackWestern 7: FuturFund - Women in Financial Literacy Award :trophy: <br/> HackWestern 7: Deloite - Perfect Pitch Award :trophy:
+# k kard :credit_card: (HackWestern 7)
+## FuturFund: Women in Financial Literacy Award :trophy: <br/> Deloite: Perfect Pitch Award :trophy:
 ## Inspiration
 As we are all heading into a future that is going towards paper free, contactless payments, millennial parents are finding it inconvenient to provide their kids with paper cash allowances. Millennial parents no longer carry cash these days. 34% of adults under the age of 50 make zero cash purchases in a typical week according to The Pew Research Center. Unfortunately, cash is no longer king.  
 
