@@ -1,4 +1,4 @@
-# :credit_card: k kard | (FuturFund: Women in Financial Literacy Award Winner) | (Deloite Perfect Pitch Winner)
+# k kard :credit_card: <br/> FuturFund: Women in Financial Literacy Award Winner :trophy: <br/> Deloite Perfect Pitch Winner :trophy:
 ## Inspiration
 As we are all heading into a future that is going towards paper free, contactless payments, millennial parents are finding it inconvenient to provide their kids with paper cash allowances. Millennial parents no longer carry cash these days. 34% of adults under the age of 50 make zero cash purchases in a typical week according to The Pew Research Center. Unfortunately, cash is no longer king.  
 
@@ -14,7 +14,7 @@ Introducing ***k kard,*** a Konvenient and Kool way to pay.
 
 ***k kard*** is a mobile application, compatible with iOS and Android that provides a fun yet educational, safe and contactless payment solution such that parents can manage each transaction made by their child through a mobile platform. It is aimed towards millennial parents with children ages 8-12 who want to provide allowance without the hassle of dealing with cash or worrying about unreasonable transactions. ***k kard*** not only allows the child to make purchases through their own account, but tracks their spending and detects purchases out of the norm to alert parents when there is suspicious activity.  
 
-![App Screenshots](appscreenshots.png)  
+![App Screenshots](assets/images/appscreenshots.png)  
 
 ## Try it out!
 ### Pre-requisites
@@ -27,10 +27,13 @@ npm install -g expo-cli
 expo start
 ```
 
+Click image below for demo video (or click [here](https://youtu.be/3eHyQgif-yI))
+[![Video_Thumbnail](http://i3.ytimg.com/vi/3eHyQgif-yI/maxresdefault.jpg)](https://youtu.be/3eHyQgif-yI)
+
 ## How we built it
 The frontend of the application was prototyped using **Figma** and developed using **React Native,** while **Google Firebase** was incorporated for backend. The **Google Cloud Vision API** was utilized to implement object recognition.
 
-![TechStack](techstackwithgcp.png)
+![TechStack](assets/images/techstackwithgcp.png)
 
 ## Challenges we ran into
 Everyone on the team is new to mobile app development so there was a struggle setting up the dev environment and learning a new tech stack. Integrating the camera authorization functionality of the app was the most challenging obstacle we faced. Additionally, building the bridge between Google Cloud Vision and React Native was difficult as none of us has any experience with either of the technologies prior to this project.
